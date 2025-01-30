@@ -1,4 +1,4 @@
-/*package webCrawler;
+package webCrawler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,10 +23,10 @@ public class SearchFrame extends JFrame {
     //shows 1-10 combo box option
     public JComboBox comboBox;
 
-    //webCrawler.DisplayPanel will show links and frequencies
+    //DisplayPanel will show links and frequencies
     DisplayPanel displayPanel = new DisplayPanel();
 
-    //cardLayout switches between searchDisplayScreen and webCrawler.DisplayPanel
+    //cardLayout switches between searchDisplayScreen and DisplayPanel
     CardLayout cardLayout = new CardLayout();
 
     //counts amount of words separated by " "
@@ -60,7 +60,7 @@ public class SearchFrame extends JFrame {
         label = new JLabel();
         label.setOpaque(false);
         label.setVisible(true);
-        background = new ImageIcon("src/global-6635477_1280.png");
+        background = new ImageIcon("src/webCrawler/global-6635477_1280.png");
         label.setIcon(background);
         label.setFocusable(false);
         label.setBounds(0,0,1280,890);
@@ -74,12 +74,12 @@ public class SearchFrame extends JFrame {
         labelPanel.setBounds(470,300,500,100);
 
         //third label displays "Max 'Or' Page Search"
-        pageLabel = new JLabel("Max 'Or' Page Search");
+        pageLabel = new JLabel("Max Page Search");
         pageLabel.setVisible(true);
         pageLabel.setForeground(Color.black);
         pageLabel.setFont(new Font("Times New Roman", Font.BOLD, 30));
         pageLabel.setOpaque(false);
-        pageLabel.setBounds(370,420,400,75);
+        pageLabel.setBounds(420,420,400,75);
 
 
         //combo box will store a list of integers
@@ -95,7 +95,7 @@ public class SearchFrame extends JFrame {
         comboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Option picked will be assigned to max page search in webCrawler.Spider Class
+                //Option picked will be assigned to max page search in Spider Class
                 if (e.getSource()==comboBox){
                     Spider.MAX_PAGES_TO_SEARCH = (int) comboBox.getSelectedItem();
                 }
@@ -258,7 +258,7 @@ public class SearchFrame extends JFrame {
         displayPanel.revalidate();
         displayPanel.repaint();
 
-        //Deserializes hashmap wordFrequencies from webCrawler.SpiderLeg class
+        //Deserializes hashmap wordFrequencies from SpiderLeg class
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("wordFrequencies.ser"))) {
             //new hashmap casts deserialized object to hashmap and stores it
             HashMap<String, Integer> deserializedMap = (HashMap<String, Integer>) ois.readObject();
@@ -315,4 +315,3 @@ public class SearchFrame extends JFrame {
         }
     }
 }
-*/

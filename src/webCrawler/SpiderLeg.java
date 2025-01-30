@@ -1,4 +1,4 @@
-/*package webCrawler;
+package webCrawler;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -11,8 +11,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import stevenNavarretteIII.LinkedList;
-
 public class SpiderLeg implements Serializable {
     public static int counter = 0;
     //This is the decent polite way of doing this!!
@@ -69,7 +67,7 @@ public class SpiderLeg implements Serializable {
         //if bodytext is not empty
         if (bodyText != null) {
             //sets file of stopwords
-            String filePath = "src/stopwords.txt";
+            String filePath = "src/webCrawler/stopwords.txt";
 
             //splits every word from text input
             String[] eachSearchWord = searchWord.split(" ");
@@ -91,7 +89,7 @@ public class SpiderLeg implements Serializable {
             counter++;
 
             //when counter increments to the maximum pages searched now hash map can be serialized
-            if (counter== Spider.MAX_PAGES_TO_SEARCH) {
+            if (counter==Spider.MAX_PAGES_TO_SEARCH) {
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("wordFrequencies.ser"))) {
                     oos.writeObject(wordFrequencies);  // Write the HashMap to a file
                 } catch (IOException e) {
@@ -142,4 +140,3 @@ public class SpiderLeg implements Serializable {
         }
 
 }
-*/

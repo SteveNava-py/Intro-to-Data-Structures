@@ -1,4 +1,4 @@
-/*package webCrawler;
+package webCrawler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,4 +46,3 @@ public class DisplayPanel extends JLayeredPane {
     }
 
 }
-*/

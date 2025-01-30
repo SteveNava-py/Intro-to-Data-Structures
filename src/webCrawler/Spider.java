@@ -1,4 +1,4 @@
-/*package webCrawler;
+package webCrawler;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -26,7 +26,7 @@ public class Spider {
            } else {
                currentUrl = this.nextURL();
            }
-           //takes current url to webCrawler.SpiderLeg and parses data
+           //takes current url to SpiderLeg and parses data
            leg.crawl(currentUrl);
            leg.searchForWord(searchWord, currentUrl);
 
@@ -47,4 +47,4 @@ public class Spider {
 
     }
 
-}*/
+}
